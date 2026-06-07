@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>HoneyWorks『ハートブーケ』 - コード譜</title>
+<style>
+  /* --- 全体設定・カラーテーマ --- */
+  :root {
+    --main-pink: #D81159;  /* タイトルなどのメインピンク */
+    --accent-pink: #FF758F; /* ボーダーやカポなどのアクセント */
+    --light-pink: #FFF5F6; /* 背景の薄いピンク */
+    --chord-blue: #0077B6; /* コードの視認性を高めるブルー */
+    --text-color: #333333; /* 歌詞のテキストカラー */
+  }
+
+  body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    background-color: var(--light-pink);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px 0;
+    /* 背景色を印刷に反映させるおまじない */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* 印刷用の用紙設定 */
+  @page {
+    size: A4 portrait; /* A4 縦 */
+    margin: 15mm;      /* 余白 */
+  }
+
+  /* --- メインコンテナ --- */
+  .container {
+    max-width: 800px;  /* 1列で見やすい横幅に調整 */
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  /* --- ヘッダー --- */
+  .header {
+    border-bottom: 2px dashed var(--accent-pink);
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .title-area h1 {
+    font-size: 24px;
+    color: var(--main-pink);
+    margin: 0 0 8px 0;
+    letter-spacing: 1px;
+  }
+  .author {
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+  }
+  .capo {
+    background-color: var(--accent-pink);
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 15px;
+    box-shadow: 0 2px 4px rgba(255, 117, 143, 0.3);
+  }
+
+  /* --- コード譜本体 --- */
+  .chords-container {
+    /* 1列にするため段組み設定を削除 */
+    display: block;
+  }
+
+  /* --- 各行のブロック --- */
+  .block {
+    break-inside: avoid;      /* ブロック内での改ページを禁止（文字が切れない） */
+    page-break-inside: avoid;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background-color: #FAFAFA;
+    border-left: 4px solid #FFB3C6;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* セクション（前奏・間奏など） */
+  .section-title {
+    font-size: 12px;
+    color: var(--main-pink);
+    font-weight: bold;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #FFB3C6;
+    display: inline-block;
+  }
+
+  /* コード部分 */
+  .chord {
+    font-family: 'Courier New', Consolas, Monaco, monospace;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--chord-blue);
+    white-space: pre; /* 空白をそのまま表示して位置を維持 */
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+  }
+
+  /* 歌詞部分 */
+  .lyric {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin: 0;
+  }
+
+  /* --- 印刷時専用のスタイル --- */
+  @media print {
+    body {
+      background-color: #fff;
+      padding: 0;
+    }
+    .container {
+      max-width: 100%;
+      box-shadow: none;
+      padding: 0;
+      border-radius: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <div class="title-area">
+      <h1>HoneyWorks『ハートブーケ』</h1>
+      <div class="author">書き起こし者： 獅子兎場</div>
+    </div>
+    <div class="meta-area">
+      <div class="capo">capo = 03</div>
+    </div>
+  </div>
+
+  <div class="chords-container">
+    <!-- 前奏 -->
+    <div class="block">
+      <div class="section-title">前奏</div>
+      <div class="chord">Em F G G#dim Am  G F#dim F G</div>
+    </div>
+    <div class="block">
+      <div class="chord">Em F G G#dim Am  G F#dim F G</div>
+    </div>
+
+    <!-- Aメロ等 -->
+    <div class="block">
+      <div class="chord">Em       F     Em    G</div>
+      <div class="lyric">画面越し待っている君がいるから</div>
+    </div>
+    <div class="block">
+      <div class="chord">Em       F     G    C</div>
+      <div class="lyric">ネガティブと戦い 今日が笑える</div>
+    </div>
+    <div class="block">
+      <div class="chord">Em       F     Em    G</div>
+      <div class="lyric">幸せにしたいのに僕の方がほら</div>
+    </div>
+    <div class="block">
+      <div class="chord">Em       F     G    C</div>
+      <div class="lyric">幸せにされてる 救われている</div>
+    </div>
+
+    <div class="block">
+      <div class="chord">Am  Bdim C</div>
+      <div class="lyric">心無い言葉の棘も</div>
+    </div>
+    <div class="block">
+      <div class="chord">Dm        Em</div>
+      <div class="lyric">君がいれば痛くないから</div>
+    </div>
+    <div class="block">
+      <div class="chord">    F          G</div>
+      <div class="lyric">声が枯れてもこの歌が届くなら歌おう</div>
+    </div>
+
+    <!-- サビ等 -->
+    <div class="block">
+      <div class="chord">Em    F</div>
+      <div class="lyric">好きだけじゃ足りない</div>
+    </div>
+    <div class="block">
+      <div class="chord">G      G#dim  Am</div>
+      <div class="lyric">言葉だけじゃ足りない</div>
+    </div>
+    <div class="block">
+      <div class="chord">G F#dim F G</div>
+      <div class="lyric">(wow wow)</div>
+    </div>
+    <div class="block">
+      <div class="chord">F    G</div>
+      <div class="lyric">どう伝えればいい？</div>
+    </div>
+    <div class="block">
+      <div class="chord">Em  F</div>
+      <div class="lyric">命を焦がして</div>
+    </div>
+    <div class="block">
+      <div class="chord">G      G#dim  Am</div>
+      <div class="lyric">聞かせたい 鼓動を</div>
+    </div>
+    <div class="block">
+      <div class="chord">G F#dim</div>
+      <div class="lyric">(wow wow)</div>
+    </div>
+    <div class="block">
+      <div class="chord">F    G</div>
+      <div class="lyric">この愛は本物</div>
+    </div>
+    <div class="block">
+      <div class="chord">F   G   G#dim Am  F       G    C</div>
+      <div class="lyric">君に贈る 愛の花束 どうしようもなく好きなんだ</div>
+    </div>
+
+    <!-- 間奏 -->
+    <div class="block">
+      <div class="section-title">間奏</div>
+      <div class="chord">Em F G G#dim Am  G F#dim F G</div>
+    </div>
+
+    <!-- 2番 -->
+    <div class="block">
+      <div class="chord">Em       F     Em    G</div>
+      <div class="lyric">完璧じゃなくていい 泣いたっていい</div>
+    </div>
+    <div class="block">
+      <div class="chord">Em       F       G</div>
+      <div class="lyric">不器用でも真っ直ぐ生きていこうよ</div>
+    </div>
+    <div class="block">
+      <div class="chord">Em       F     Em    G</div>
+      <div class="lyric">焦りも嫉妬も全部抱きしめて</div>
+    </div>
+    <div class="block">
+      <div class="chord">Em       F</div>
+      <div class="lyric">この場所で生きてる</div>
+    </div>
+    <div class="block">
+      <div class="chord">G    C</div>
+      <div class="lyric">温かい場所</div>
+    </div>
+
+    <div class="block">
+      <div class="chord">Am      Bdim  C</div>
+      <div class="lyric">”頑張れ”の言葉一つで</div>
+    </div>
+    <div class="block">
+      <div class="chord">Dm        Em</div>
+      <div class="lyric">立ち上がれる 涙拭える</div>
+    </div>
+    <div class="block">
+      <div class="chord">F          G</div>
+      <div class="lyric">勇気満ちてく 奮い立つ曇りなき感情</div>
+    </div>
+
+    <div class="block">
+      <div class="chord">Em  F</div>
+      <div class="lyric">命は輝く</div>
+    </div>
+    <div class="block">
+      <div class="chord">G      G#dim  Am</div>
+      <div class="lyric">世界照らすように</div>
+    </div>
+    <div class="block">
+      <div class="chord">G F#dim</div>
+      <div class="lyric">(wow wow)</div>
+    </div>
+    <div class="block">
+      <div class="chord">F      G</div>
+      <div class="lyric">カラフルに色づく</div>
+    </div>
+    <div class="block">
+      <div class="chord">Em  F</div>
+      <div class="lyric">今だけじゃ足りない</div>
+    </div>
+    <div class="block">
+      <div class="chord">G      G#dim  Am</div>
+      <div class="lyric">過去も未来も全部</div>
+    </div>
+    <div class="block">
+      <div class="chord">G F#dim</div>
+      <div class="lyric">(wow wow)</div>
+    </div>
+    <div class="block">
+      <div class="chord">F   G</div>
+      <div class="lyric">幸せに染めたい</div>
+    </div>
+    <div class="block">
+      <div class="chord">F   G   G#dim Am  F       G    C</div>
+      <div class="lyric">君と紡ぐ 愛の約束 どうしようもなく好きなんだ</div>
+    </div>
+    <div class="block">
+      <div class="chord">Em F G G#dim Am  G F#dim F G G#dim</div>
+    </div>
+
+    <!-- Cメロ・大サビ -->
+    <div class="block">
+      <div class="chord">Am    F    G      C</div>
+      <div class="lyric">弱さも醜さも 知ってほしい見てほしい</div>
+    </div>
+    <div class="block">
+      <div class="chord">Am    F    G      C</div>
+      <div class="lyric">ずっとずっと笑っていて</div>
+    </div>
+    <div class="block">
+      <div class="chord">Am      F</div>
+      <div class="lyric">一人じゃ描けない</div>
+    </div>
+    <div class="block">
+      <div class="chord">G    C      Dm</div>
+      <div class="lyric">未来のページ描いていこう（描いていこう）</div>
+    </div>
+    <div class="block">
+      <div class="chord">    F</div>
+      <div class="lyric">重ねていこう（重ねていこう）</div>
+    </div>
+    <div class="block">
+      <div class="chord">    G          A</div>
+      <div class="lyric">もう逆風は怖くない 高鳴りが止まらない</div>
+    </div>
+
+    <div class="block">
+      <div class="chord">N/C</div>
+      <div class="lyric">好きだけじゃ足りない</div>
+    </div>
+    <div class="block">
+      <div class="chord">A      A#dim</div>
+      <div class="lyric">言葉だけじゃ足りない</div>
+    </div>
+    <div class="block">
+      <div class="chord">Bm  A G#dim</div>
+      <div class="lyric">(wow wow)</div>
+    </div>
+    <div class="block">
+      <div class="chord">G      A</div>
+      <div class="lyric">どう伝えればいい？</div>
+    </div>
+
+    <div class="block">
+      <div class="chord">F#m G</div>
+      <div class="lyric">命を焦がして</div>
+    </div>
+    <div class="block">
+      <div class="chord">A      A#dim</div>
+      <div class="lyric">聞かせたい 鼓動を</div>
+    </div>
+    <div class="block">
+      <div class="chord">Bm  A G#dim</div>
+      <div class="lyric">(wow wow)</div>
+    </div>
+    <div class="block">
+      <div class="chord">G    A</div>
+      <div class="lyric">この愛は本物</div>
+    </div>
+    <div class="block">
+      <div class="chord">G   A   A#dim Bm Em         A</div>
+      <div class="lyric">君に贈る 愛の花束 どうしようもなく好きなんだ</div>
+    </div>
+    <div class="block">
+      <div class="chord">F#m G A A#dim Bm  A G#dim G A D</div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
